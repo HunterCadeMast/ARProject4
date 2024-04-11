@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="fridgetarget" size="1.000000 1.000000" />
+    <ImageTarget name="innertarget" size="1.000000 1.000000" />
+    <ImageTarget name="doortarget" size="1.000000 1.000000" />
+    <ImageTarget name="sofatarget" size="1.000000 1.000000" />
+    <ImageTarget name="bedtarget" size="1.000000 1.000000" />
+    <ImageTarget name="windowtarget" size="1.000000 1.000000" />
+    <ImageTarget name="oventarget" size="1.000000 1.000000" />
+    <ImageTarget name="outertarget" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
