@@ -18,6 +18,10 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            foreach (Transform child in houseTarget.transform)
+            {
+                Destroy(child.gameObject);
+            }
             CreateHouse();
         }
     }
@@ -63,7 +67,6 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
         }
         for (int i = 0; i < cornerTargets.Length; i++)
         {
-            DestroyExistingChild(houseTarget, cornerTargets[i].name + "(Clone)");
             GameObject childCopy = Instantiate(cornerTargets[i], houseTarget.transform);
             childCopy.transform.localPosition = relativePositions[i];
         }
@@ -93,19 +96,20 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
                     if (!WallExistsAtPosition(centerPosition))
                     {
                         string wallName = "Wall (" + currentTarget.name + nextTarget.name + ")";
-                        DestroyExistingChild(houseTarget, wallName);
                         GameObject wall = Instantiate(wallPrefab, houseTarget.transform);
                         wall.name = wallName;
                         wall.transform.localPosition = relativeWallPosition;
-                        Vector3 scale = Vector3.zero;
+                        Vector3 scale = new Vector3(0.2487f, 0.2487f, 0.2487f);
                         if (distanceX <= distanceThreshold)
                         {
-                            scale = new Vector3(distanceX, 0.2487f, 0.2487f);
+                            float scaleFactor = distanceZ / 4.5f;
+                            scale.x = scaleFactor;
                             wall.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
                         }
                         else if (distanceZ <= distanceThreshold)
                         {
-                            scale = new Vector3(distanceZ, 0.2487f, 0.2487f);
+                            float scaleFactor = distanceX / 4.5f;
+                            scale.x = scaleFactor;
                             wall.transform.rotation = Quaternion.identity;
                         }
                         wall.transform.localScale = scale;
@@ -138,15 +142,6 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
             }
         }
         return false;
-    }
-
-    void DestroyExistingChild(GameObject targetParent, string childName)
-    {
-        Transform existingChild = targetParent.transform.Find(childName);
-        if (existingChild != null)
-        {
-            Destroy(existingChild.gameObject);
-        }
     }
 
     void CreateOpenings()
@@ -189,9 +184,7 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
                 }
                 if (corner1 != null && corner2 != null)
                 {
-                    DestroyExistingChild(houseTarget, "Wall (" + corner1.name + corner2.name + ")");
                     string openingName = "Opening (" + corner1.name + corner2.name + ")";
-                    DestroyExistingChild(houseTarget, openingName);
                     GameObject opening = Instantiate(target, houseTarget.transform);
                     opening.name = openingName;
                     opening.transform.localPosition = relativePosition;
@@ -227,19 +220,20 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
         if (!WallExistsAtPosition(wallPosition))
         {
             string wallName = "Wall (" + corner1.name + corner2.name + ")";
-            DestroyExistingChild(houseTarget, wallName);
             GameObject wall = Instantiate(wallPrefab, houseTarget.transform);
             wall.name = wallName;
             wall.transform.localPosition = relativeWallPosition;
-            Vector3 scale = Vector3.zero;
+            Vector3 scale = new Vector3(0.2487f, 0.2487f, 0.2487f);
             if (distanceX <= distanceThreshold)
             {
-                scale = new Vector3(distanceX, 0.2487f, 0.2487f);
+                float scaleFactor = distanceX;
+                scale.x = scaleFactor;
                 wall.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             }
             else if (distanceZ <= distanceThreshold)
             {
-                scale = new Vector3(distanceZ, 0.2487f, 0.2487f);
+                float scaleFactor = distanceZ;
+                scale.x = scaleFactor;
                 wall.transform.rotation = Quaternion.identity;
             }
             wall.transform.localScale = scale;
@@ -264,7 +258,6 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
                 if (IsWithinHouseBounds(furniturePosition))
                 {
                     string furnitureName = "Furniture (" + furniture.name + ")";
-                    DestroyExistingChild(houseTarget, furnitureName);
                     GameObject placedFurniture = Instantiate(furniture, houseTarget.transform);
                     placedFurniture.name = furnitureName;
                     placedFurniture.transform.localPosition = relativePosition;
@@ -320,7 +313,6 @@ public class TouchTriggeredHouseCreation : MonoBehaviour
             origin += point;
         }
         origin /= boundaryPoints.Count;
-        DestroyExistingChild(houseTarget, "Floor");
         GameObject floorObject = new GameObject("Floor");
         floorObject.transform.SetParent(houseTarget.transform);
         floorObject.transform.localPosition = Vector3.zero;
