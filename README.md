@@ -1,7 +1,13 @@
 # ARProject4
+
+**Video Link:**
+
+
 **Project Description:**
 
 This project is a demo for an adjustable house designer in an augmented reality environment. The project allows a creation of an environment with an outer corner layout, opening layout, interior wall design, furniture placement, and color choice. The main goal of this demo was to have a better idea of tracking using the Vuforia package in the Unity game engine. With this, we will be able to have a better idea of how a house's layout options and the ability to change quickly. Tracking focuses on the aspects of Image targets are included in the file path "".
+
+Main code lies in the "" path. "ModelCreator.cs" handles all target events. "ModelSwitch" handles all color menu events.
 
 **Installation (Tested on Android):**
 Using Android Device:
@@ -13,11 +19,23 @@ Using Android Device:
 Using IOS Device:
 - Locate "BuildIOS" file path.
 - Connect device to computer.
-- Using XCode, upload "" XCode file onto device..
+- Using XCode, upload "" XCode file onto device.
 - Open app to use project.
 
 Vuforia Verion: 10.21.3 (May need to be installed seperately)
 Unity Version: 3.7
+
+**Tests:**
+Test 1: Inner Acrossed and Next
+- Corner 
+
+Test 2: Inner and Opening
+- 
+
+Test 3: Openings, Furniture, and Color Menu
+- 
+
+For APKs, the main one has no test label. The rest in the folder, "Tests", handle these conditions. Due to this being so computationally expensive to run, I had to simulate most of them in Unity's environment. Tests were attempted, but crashed. Targets must manually be placed in Unity as GameObjects to the correct target list.
 
 **Assets Used:**
 Wooden Floor Materials by Casual2D
