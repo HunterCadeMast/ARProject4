@@ -1,7 +1,7 @@
 # ARProject4
 
 **Video Link:**
-
+https://youtu.be/SBFqx6gVP0o
 
 **Project Description:**
 
@@ -27,18 +27,47 @@ Unity Version: 3.7
 
 **Tests:**
 Test 1: Inner Acrossed and Next
-- Corner 
-
 Test 2: Inner and Opening
-- 
-
 Test 3: Openings, Furniture, and Color Menu
-- 
 
 For APKs, the main one has no test label. The rest in the folder, "Tests", handle these conditions. Due to this being so computationally expensive to run, I had to simulate most of them in Unity's environment. Tests were attempted, but crashed. Targets must manually be placed in Unity as GameObjects to the correct target list.
 
 **Assets Used:**
-Wooden Floor Materials by Casual2D
+
+- Wooden Floor Materials by Casual2D
+
+- Sofa
+https://www.homedepot.com/p/Harper-Bright-Designs-131-in-Square-Arm-3-Piece-Polyester-U-Shaped-Sectional-Sofa-in-Gray-with-Chaise-WYT104AAE/320923588#overlay
+
+- Bed
+https://www.target.com/p/costway-twin-size-upholstered-bed-frame-button-tufted-headboard-mattress-foundation-grey/-/A-87280287
+
+- Door
+https://www.homedepot.com/p/Steves-Sons-Regency-Collection-Customizable-Fiberglass-Front-Door-552299/311301192?55419-Slab&45684-35-3-4-x-79&71573-Radiance&45464-Russet&45138-1-4-Top-Lite
+https://www.pella.com/ideas/doors/entry-doors/front-door-design-ideas/
+
+- Interior
+https://www.forbes.com/home-improvement/painting/interior-house-painting-cost/
+
+- Fridge
+https://witanddelight.com/2022/03/fridge-organization-system/
+
+- Oven
+https://www.lg.com/us/cooking-appliances/lg-ltgl6937f-double-oven-slide-in-gas-range
+
+- Window
+https://www.thompsoncreek.com/blog/why-are-window-panes-made-of-glass/
+https://www.guttermanservices.com/questions-to-ask-when-buying-replacement-windows-for-my-ashburn-va-home/
+https://www.photowall.com/us/window-bay-view-canvas-print
+https://www.architecturaldigest.com/reviews/windows/types-of-windows
+
+- Corner
+https://thegraphicsfairy.com/free-embroidery-corner-design/
+https://stock.adobe.com/contributor/202642025/baoyan?load_type=author&prev_url=detail
+https://www.vecteezy.com/vector-art/954079-brown-vintage-frame-border-and-corner-set
+
+- Unit
+https://www.forbes.com/home-improvement/living/types-of-house-styles/
 
 **Project Idea Description (Pre-MVD):**
 
